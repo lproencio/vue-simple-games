@@ -1,13 +1,21 @@
 <template>
-  <div class="card_memory">
-    <div class="card">Front</div>
-    <div class="card">Back</div>
+  <div class="card_memory" :class="{ flip: clicked }" @click="flip_card">
+    <div class="card front">Front</div>
+    <div class="card back"><div></div></div>
   </div>
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
 export default {
   name: "card_memory",
-  setup() {},
+  setup() {
+    const clicked = ref(false);
+
+    const flip_card = () => {
+      clicked.value = !clicked.value;
+    };
+    return { clicked, flip_card };
+  },
 };
 </script>

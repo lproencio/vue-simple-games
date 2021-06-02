@@ -1,18 +1,18 @@
 <template>
   <div class="memory_game">
     <h1>memory_game</h1>
-    <card_memory />
+    <CardMemory />
   </div>
 </template>
 
 <script>
-import card_memory from "@/components/card/Memory";
+import CardMemory from "@/components/card/Memory";
 
 export default {
   name: "HelloWorld",
 
   components: {
-    card_memory,
+    CardMemory,
   },
 };
 </script>

@@ -1,0 +1,32 @@
+.memory_game {
+  @apply flex flex-col justify-center items-center;
+}
+
+.card_memory {
+  @apply h-32 w-28 relative flex justify-center cursor-pointer;
+  transform-style: preserve-3d;
+
+  & .card {
+    @apply absolute w-full h-full flex justify-center items-center rounded-md bg-white;
+  }
+
+  & .front {
+    transform: rotatey(180deg);
+  }
+
+  & .back {
+    @apply bg-blue-500 border border-gray-300 p-3;
+    box-shadow: 0px 0px 8px 0px #bbb;
+
+    & div {
+      @apply w-14 h-14;
+      background-image: url("../img/pokebola.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.flip {
+  transform: rotatey(180deg);
+}
