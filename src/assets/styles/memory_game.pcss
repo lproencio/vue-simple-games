@@ -1,14 +1,30 @@
 .memory_game {
   @apply flex flex-col justify-center items-center;
+
+  & .all_cards {
+    @apply grid grid-cols-6 w-3/4 justify-between mt-10;
+
+    & .item_list {
+      @apply flex items-center justify-center mt-8;
+    }
+  }
 }
 
 .card_memory {
-  @apply h-32 w-28 relative flex justify-center cursor-pointer;
+  @apply h-40 w-32 relative flex justify-center cursor-pointer;
   transform-style: preserve-3d;
   transition: all 1s;
 
   & .card {
-    @apply absolute w-full h-full flex justify-center items-center rounded-md bg-white;
+    @apply absolute w-full h-full flex flex-col justify-center items-center rounded-md bg-white;
+
+    & img {
+      @apply h-1/2;
+    }
+
+    & p {
+      @apply text-sm font-bold;
+    }
   }
 
   & .front {
@@ -25,6 +41,38 @@
       background-repeat: no-repeat;
       background-size: contain;
     }
+  }
+
+  & .Grass {
+    @apply bg-blue-300;
+  }
+
+  & .Fire {
+    @apply bg-green-400;
+  }
+
+  & .Water {
+    @apply bg-red-400;
+  }
+
+  & .Bug {
+    @apply bg-yellow-500;
+  }
+
+  & .Normal {
+    @apply bg-purple-500;
+  }
+
+  & .Electric {
+    @apply bg-pink-300;
+  }
+
+  & .Psychic {
+    @apply bg-gray-400;
+  }
+
+  & .Dragon {
+    @apply bg-indigo-500;
   }
 }
 
