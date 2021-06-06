@@ -14,11 +14,29 @@
 
 <script>
 import { ref } from "@vue/reactivity";
+import { watch } from "@vue/runtime-core";
 export default {
   name: "card_memory",
-  props: { pokemon: Object },
-  setup(_, { emit }) {
+  props: {
+    pokemon: Object,
+    match_pokemon: Array,
+    selected_pokemon: Array,
+  },
+  setup(props, { emit }) {
     const clicked = ref(false);
+
+    watch(props, () => {
+      if (
+        !props.match_pokemon.includes(props.pokemon.id) &&
+        props.selected_pokemon.length > 2
+      ) {
+        props.selected_pokemon.map((selected) => {
+          if (selected == props.pokemon.id) {
+            clicked.value = false;
+          }
+        });
+      }
+    });
 
     const flip_card = (id) => {
       clicked.value = !clicked.value;
